@@ -95,7 +95,7 @@ const ItemsTable = React.createClass({
 	},
 	render () {
 		const { items } = this.props;
-		if (!items.results.length) return null;
+		if (items && items.results && !items.results.length) return null;
 
 		const tableBody = (this.props.list.sortable) ? (
 			<DragDrop {...this.props} />
