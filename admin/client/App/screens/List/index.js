@@ -497,7 +497,7 @@ const ListView = React.createClass({
 		);
 	},
 	renderNoSearchResults () {
-		if (this.props.items.results.length) return null;
+		if (this.props.items && this.props.items.results && this.props.items.results.length) return null;
 		let matching = this.props.active.search;
 		if (this.props.active.filters.length) {
 			matching += (matching ? ' and ' : '') + pluralize(this.props.active.filters.length, '* filter', '* filters');
