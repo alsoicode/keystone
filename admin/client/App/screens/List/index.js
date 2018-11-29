@@ -395,7 +395,12 @@ const ListView = React.createClass({
 		this.toggleCreateModal(false);
 	},
 	showBlankState () {
-		return !this.props.loading
+		return this.props
+				&& this.props.items
+				&& this.props.items.results
+				&& this.props.active
+				&& this.props.active.filters
+				&& !this.props.loading
 				&& !this.props.items.results.length
 				&& !this.props.active.search
 				&& !this.props.active.filters.length;
